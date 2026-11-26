@@ -1,15 +1,40 @@
 import { useState } from "react";
+import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
  
 
-  const[email,setEmail]=useState("");
-  const[password,setPassword]=useState("");
-    
+  //const[email,setEmail]=useState("");
+  //const[password,setPassword]=useState("");
+  const[formdata,setFormdata]=useState(
+   {
+      email:"",
+      password:""
+
+   }
+  )
+  const navigate=useNavigate();  
+
   const display=(e)=>
   {
      e.preventDefault() 
-     console.log(email,password);
+     console.log(formdata.email,formdata.password);
+     toast.success("Login successfully")
+     navigate("/dashboard",
+      {
+         state:formdata
+      }
+     )
+  }
+  function setdatas(e)
+  { 
+    e.preventDefault();
+    setFormdata({
+      ...formdata,
+      [e.target.name]:[e.target.value]
+    })
+
   }
   return ( 
       <div>
@@ -20,12 +45,12 @@ function Login() {
       <div className="flex items-center justify-center h-40">
         <form onSubmit={display}>
          <h4>Enter Password:</h4>
-         <input type="password" placeholder="password" value={password} onChange={(e)=>{setPassword(e.target.value)}}/>
+         <input type="password" placeholder="password" name="password" onChange={setdatas}/>
          <br/>
          <h4>Enter Email:</h4>
-         <input type="Email" placeholder="mail" value={email} onChange={(e)=>{setEmail(e.target.value)}}/>
+         <input type="Email" placeholder="mail" name="email" onChange={setdatas}/>
          <br/>
-         <button type="submit" className="w-4/5">Submit</button>
+         <button type="submit" className="w-4/5 ">Submit</button>
       </form> 
       </div>
 
