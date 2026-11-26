@@ -1,8 +1,8 @@
 import { useState } from "react";
 import Login from "./org/login";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Schemes from "./org/schemes";
 import User from "./org/user";
+import Schemess from "./org/schemes";
 
 
 
@@ -12,7 +12,7 @@ function App() {
        <BrowserRouter>
        <Routes>
         <Route path="/" element={<Login/>}/>
-        <Route path="/schemes" element={<Schemes/>}/>
+        <Route path="/schemes" element={<Schemess/>}/>
         <Route path="/user" element={<User/>}/>
        </Routes>
        </BrowserRouter>

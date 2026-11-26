@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Schemes() {
+function Schemess() {
   const [schemeName, setSchemeName] = useState("");
   const [amount, setAmount] = useState("");
   const [user, setUser] = useState("");
@@ -36,4 +36,4 @@ function Schemes() {
   );
 }
 
-export default Schemes;
+export default Schemess;
