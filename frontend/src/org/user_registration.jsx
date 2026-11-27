@@ -45,7 +45,7 @@ function Register()
   function onsubmit1(data)
 
   {
-    toast.success("SUCCESS");
+    toast.success("SUCCESS!");
     console.log(data);
 
   }
