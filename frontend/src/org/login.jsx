@@ -21,7 +21,7 @@ function Login() {
      e.preventDefault() 
      console.log(formdata.email,formdata.password);
      toast.success("Login successfully")
-     navigate("/dashboard",
+     navigate("/orgdashboard",
       {
          state:formdata
       }
@@ -37,21 +37,21 @@ function Login() {
 
   }
   return ( 
-      <div>
+      <div className="h-screen w-screen bg-slate-100 " >
 
       
-      <div> <h1 className="text-center font-extrabold h-30 bg-amber-200 flex items-center justify-center">Login page</h1> </div>
+      <div> <h1 className="bg-blue-950 text-white font-extrabold  flex justify-center items-center h-23 text-2xl">SCHEME WELFARE</h1> </div>
        
-      <div className="flex items-center justify-center h-40">
-        <form onSubmit={display}>
-         <h4>Enter Password:</h4>
-         <input type="password" placeholder="password" name="password" onChange={setdatas}/>
-         <br/>
+      <div className="rounded-2xl bg-white border-2 border-black shadow-lg  shadow-black w-60 h-67 flex items-center justify-center  absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex-col gap-4">
+        <form onSubmit={display} className="flex flex-col gap-0.5">
          <h4>Enter Email:</h4>
          <input type="Email" placeholder="mail" name="email" onChange={setdatas}/>
          <br/>
-         <button type="submit" className="w-4/5 ">Submit</button>
-      </form> 
+         <h4 >Enter Password:</h4>
+         <input type="password" placeholder="password" name="password" onChange={setdatas}/>
+         <br/>
+         <button type="submit" className="rounded-4xl bg-green-500  w-46">SUBMIT</button>
+         </form> 
       </div>
 
       </div>

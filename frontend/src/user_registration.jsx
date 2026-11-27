@@ -33,7 +33,7 @@ function User() {
 
 export default User;*/
 
-import { registerschema } from "../components/formSchema/registerschema";
+import { registerschema } from "./components/formSchema/registerschema";
 import { useForm } from "react-hook-form";
 import {zodResolver} from "@hookform/resolvers/zod";
 import toast from "react-hot-toast";
@@ -42,7 +42,7 @@ function Register()
 {
   const {register,handleSubmit,formState:{errors}}=useForm({resolver:zodResolver(registerschema)})
 
-  function onsubmit1(data)
+  function submit(data)
 
   {
     toast.success("SUCCESS!");
@@ -50,25 +50,28 @@ function Register()
 
   }
   return(
-
-    <form onSubmit={handleSubmit(onsubmit1)}>
-       <input type="text" placeholder="enter your name:" {...register("name")}/>
+    <div>
+      <div> <h1 className="bg-blue-950 text-white font-extrabold  flex justify-center items-center h-23 text-2xl">USER REGISTERATION</h1> </div>
+ 
+      <div className="rounded-2xl bg-white border-2 border-black shadow-lg  shadow-black w-70 h-94 flex items-center justify-center  absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ">
+      <form onSubmit={handleSubmit(submit)} className="flex flex-col gap-2">
+       <input type="text" placeholder="Enter your name:" {...register("name")}/>
        <p>{errors.name?.message}</p>
-       <input type="number" placeholder="enter your age:" {...register("age")}/>
+       <input type="number" placeholder="Enter your age:" {...register("age")}/>
        <p>{errors.age?.message}</p>
-       <input type="email" placeholder="enter your email:" {...register("email")}/>
+       <input type="email" placeholder="Enter your email:" {...register("email")}/>
        <p>{errors.email?.message}</p>
-       <input type="password" placeholder="enter your password:" {...register("password")}/>
+       <input type="password" placeholder="Enter your password:" {...register("password")}/>
        <p>{errors.password?.message}</p>
-       <input type="text" placeholder="enter your panid:" {...register("panid")}/>
+       <input type="text" placeholder="Enter your panid:" {...register("panid")}/>
        <p>{errors.panid?.message}</p>
-       <input type="number" placeholder="enter your Aadharid:" {...register("aadharid")}/>
+       <input type="number" placeholder="Enter your Aadharid:" {...register("aadharid")}/>
        <p>{errors.aadharid?.message}</p>
-       <button type="submit">SUBMIT</button>
-       
-
-
-    </form>
+       <button type="submit " className="bg-green-600 rounded-4xl">SUBMIT</button>
+       </form>
+       </div>
+    </div>
+    
   );
 }
 export default Register;

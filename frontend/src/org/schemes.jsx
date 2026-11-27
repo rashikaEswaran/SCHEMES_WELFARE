@@ -11,10 +11,10 @@ function Schemess() {
 
   return (
     <div>
-      <div> <h1 className="text-center font-extrabold h-30 bg-amber-200 flex items-center justify-center">Schemes page</h1> </div>
+      <div> <h1 className="bg-blue-950 text-white font-extrabold  flex justify-center items-center h-23 text-2xl">SCHEMES REGISTERATION</h1> </div>
        
-    <div className="flex items-center justify-center h-90">
-      <form onSubmit={display}>
+      <div className="rounded-2xl bg-white border-2 border-black shadow-lg  shadow-black w-70 h-84  flex items-center justify-center  absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ">
+      <form onSubmit={display} className="flex flex-col gap-0.5">
         <h4>Scheme Name:</h4>
         <input type="text" placeholder="Enter scheme name" value={schemeName} onChange={(e) => setSchemeName(e.target.value)} />
         <br/>
@@ -30,7 +30,7 @@ function Schemess() {
           <option value="other">Other</option>
         </select>
         <br/>
-        <button type="submit" className="h-30 w-5/6"> Submit </button>
+        <button type="submit" className="rounded-3xl w-34  bg-green-500" > Submit </button>
       </form>
     </div> </div>
   );

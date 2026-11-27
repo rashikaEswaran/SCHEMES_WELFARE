@@ -1,10 +1,11 @@
 import { useState } from "react";
 import Login from "./org/login";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import User from "./org/user_registration";
 import Schemess from "./org/schemes";
 import Dashboard from "./org/dashboard";
 import {Toaster} from "react-hot-toast";
+import Register from "./user_registration";
+import Userdashboard from "./user/dashboard";
 
 
 function App() {
@@ -14,10 +15,10 @@ function App() {
        <Toaster position="top-center"/>
        <Routes>
         <Route path="/" element={<Login/>}/>
-        <Route path="/schemes" element={<Schemess/>}/>
-        <Route path="/user" element={<User/>}/>
-        <Route path="/dashboard" element={<Dashboard/>}/>
-       
+        <Route path="/userregister" element={<Register/>}/>
+        <Route path="/schemeregister" element={<Schemess/>}/>
+        <Route path="/orgdashboard" element={<Dashboard/>}/>
+        <Route path="/userdashboard" element={<Userdashboard/>}/>
        </Routes>
        </BrowserRouter>
       

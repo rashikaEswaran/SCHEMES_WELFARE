@@ -9,4 +9,4 @@ export const registerschema=z.object(
         aadharid:z.coerce.number().min(16,"should be 16")
 
     }
-)
+) 
